@@ -1,7 +1,7 @@
 # ADCHell
 Application that uses the Riot Games API to provide information and data about the League of Legends game, such as summoner profiles and champion information.
 
-Este trabalho está licenciado sob uma Licença Creative Commons Atribuição-NãoComercial 4.0 Internacional. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-nc/4.0/
+This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. To see a copy of this license, visit http://creativecommons.org/licenses/by-nc/4.0/
 
 API da Riot Games: https://developer.riotgames.com/
 
