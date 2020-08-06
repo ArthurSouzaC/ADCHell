@@ -1,5 +1,5 @@
 # ADCHell
-Next.js application that uses the Riot Games API to provide information and data about the League of Legends game, such as summoner profiles and champion information.
+Aplicação desenvolvida em Node, com Next.js, que usa a API da Riot Games para obter informações e dados sobre o jogo League of Legends, tais como os perfis de invocadores e as informações de campeões.
 
 Riot Games API: https://developer.riotgames.com/
 
