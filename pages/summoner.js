@@ -30,7 +30,6 @@ async function preload() {
 }
 
 export default function Summoner({summoner, version}) {
-
     return (
         <>
             <ProfileHeader version={version} {...summoner} />

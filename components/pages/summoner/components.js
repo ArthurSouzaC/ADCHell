@@ -1,13 +1,13 @@
-export function ProfileHeader({version, profile, summonerLevel, summonerName}) {
+export function ProfileHeader({version, profile}) {
     return (
         <div>
             <div>
                 <img src={`http://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${profile.profileIconId}.png`} />
-                <div>{summonerLevel}</div>
+                <div>{profile.summonerLevel}</div>
             </div>
 
             <div>
-                {summonerName}
+                {profile.name}
             </div>
         </div>
     )
