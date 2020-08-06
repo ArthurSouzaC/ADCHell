@@ -1,8 +1,8 @@
-export default function Champion({version, champion}) {
+export default function ListedChampion({version, champion, link}) {
     return (
-        <div>
+        <a href={link}>
             <img src={`http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champion}.png`} />
             <span> {champion} </span>
-        </div>
+        </a>
     )
 }

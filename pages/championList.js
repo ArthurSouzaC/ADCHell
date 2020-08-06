@@ -3,7 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Champions.module.css'
 
 // Page components
-import Champion from '../components/pages/champions/components.js'
+import ListedChampion from '../components/pages/championList/components.js'
 
 // Riot API request functions
 import { 
@@ -18,7 +18,7 @@ async function preload() {
 }
 
 // Champions page
-export default function Champions({version, champions}) {
+export default function ChampionList({version, champions}) {
     return (
         <div>
             <Head>
@@ -28,7 +28,7 @@ export default function Champions({version, champions}) {
 
             {Object.entries(champions).map((champion, i) => {
                 return(
-                    <Champion key={'champion-list-' + champion[0]} version={version} champion={champion[0]} />
+                    <ListedChampion key={'champion-list-' + champion[0]} version={version} champion={champion[0]} link={`/champions/${champion[0]}`}/>
                 )
             })}
         </div>

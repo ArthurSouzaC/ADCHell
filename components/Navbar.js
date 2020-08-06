@@ -11,7 +11,7 @@ export default function Navbar() {
 
             <nav>
                 <Link href="/"><a>Home</a></Link>
-                <Link href="/champions"><a>Campeões</a></Link>
+                <Link href="/championList"><a>Campeões</a></Link>
                 <Link href="/free-week"><a>Rotação Gratuita</a></Link>
             </nav>
         

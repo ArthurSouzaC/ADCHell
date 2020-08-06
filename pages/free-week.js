@@ -29,7 +29,7 @@ export default function FreeWeek({freeWeek, version}) {
             </Head>
             
             {freeWeek.map((champion, i) => {
-                return <FwChampion key={'fwchampion-' + champion} version={version} champion={champion} />
+                return <FwChampion key={'fwchampion-' + champion} version={version} champion={champion} link={`/champions/${champion}`}/>
             })}
         </div>
 )

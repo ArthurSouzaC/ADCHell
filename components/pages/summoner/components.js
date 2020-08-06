@@ -68,14 +68,14 @@ export function Match({version, currentPlayer, participants}) {
                 <div>
                     {participants.map((player, i) => {
                         if(i < 5){
-                            return <BlueTeamPlayer key={'participant-' + player.summonerName} version={version} participant={player}/>
+                            return <BlueTeamPlayer key={'participant-' + i} version={version} participant={player}/>
                         }
                     })}
                 </div>
                 <div>
                 {participants.map((player, i) => {
                         if(i >= 5 || i < 10){
-                            return <RedTeamPlayer key={'participant-' + player.summonerName} version={version} participant={player}/>
+                            return <RedTeamPlayer key={'participant-' + i} version={version} participant={player}/>
                         }
                     })}
                 </div>
