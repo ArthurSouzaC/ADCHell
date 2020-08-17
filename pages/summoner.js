@@ -1,4 +1,3 @@
-// Next.js 
 import Head from 'next/head'
 
 // Riot API request functions
@@ -15,12 +14,10 @@ import {
 
 
 // Page components
-import {
-    ProfileHeader,
-    Elo,
-    TopMastery,
-    Match
-} from '../components/pages/summoner/components.js'
+import Elo from '../components/Elo'
+import TopMastery from '../components/TopMastery'
+import Match from '../components/Match'
+
 
 var version, champions, spells
 async function preload() {
@@ -29,10 +26,20 @@ async function preload() {
     spells = await getSummonerSpells(version)
 }
 
+// Summoner info page
 export default function Summoner({summoner, version}) {
     return (
         <>
-            <ProfileHeader version={version} {...summoner} />
+           <div>
+                <div>
+                    <img src={`http://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${summoner.profile.profileIconId}.png`} />
+                    <div>{summoner.profile.summonerLevel}</div>
+                </div>
+
+                <div>
+                    {summoner.profile.name}
+                </div>
+            </div>
 
             <div>
                 <div>

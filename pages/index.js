@@ -1,56 +1,34 @@
-// Next.js
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 
 // Home CSS
-import styles from '../styles/Home.module.css'
+import styles from '../styles/home.module.css'
 
-// React-Bootstrap
-import { Button, Form } from 'react-bootstrap'
-
+// Homepage
 export default function Home() {
 
-	const router = useRouter()
 	const [summonerName, setSummonerName] = React.useState('')
 	const [region, setRegion] = React.useState('br1')
 
-	function handleSubmit(event) {
-		router.push({
-		pathname: '/summoner',
-		query: {
-			summonerName,
-			region
-		}
-		})
-
-		event.preventDefault()
-	}
-
 	return (
-		<>
-
 		<div>
 			<Head>
 				<title>ADCHell - League of Legends info</title>
 				<link rel="icon" href="/adchell-logo.ico" />
 			</Head>
 
-			<div className={styles.container}>
-			<div className={styles.header}>
-				<img className={styles.header_brand} src="brand/adchell-logo.svg" title="ADCHell" alt="Brand" />
-				<h1 className={styles.header_name}>ADCHell</h1>
+			<div>
+			<div>
+				<img src="brand/adchell-logo.svg" title="ADCHell" alt="Brand" />
+				<h1>ADCHell</h1>
 			</div>
 
-			<Form className={styles.summoner_search_form} onSubmit={handleSubmit} >
+			<form action="/summoner" method="get">
 
-				<Form.Group controlId="summonerName">
-				<Form.Label>Nome de Invocador</Form.Label>
-				<Form.Control name="summonerName" size="lg" type="text" value={summonerName} onChange={e => setSummonerName(e.target.value)} required/>
-				</Form.Group>
+				<label htmlFor="summonerName">Nome de Invocador</label>
+				<input name="summonerName" type="text" value={summonerName} onChange={e => setSummonerName(e.target.value)} required/>
 
-				<Form.Group controlId="region">
-				<Form.Label>Região</Form.Label>
-				<Form.Control name="region" as="select" value={region} onChange={e => setRegion(e.target.value)}>
+				<label htmlFor="region">Região</label>
+				<select name="region" value={region} onChange={e => setRegion(e.target.value)}>
 					<option value="br1">BR1</option>
 					<option value="eun1">EUN1</option>
 					<option value="euw1">EUW1</option>
@@ -62,14 +40,11 @@ export default function Home() {
 					<option value="oc1">OC1</option>
 					<option value="tr1">TR1</option>
 					<option value="ru">RU</option>
-				</Form.Control>
-				</Form.Group>
+				</select>
 
-				<Button variant="primary" type="submit">Buscar</Button>
-			</Form>
+				<button type="submit">Buscar</button>
+			</form>
 			</div>
 		</div>
-
-		</>
 	)
 }

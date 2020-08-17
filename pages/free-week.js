@@ -1,6 +1,4 @@
-// Next.js
 import Head from 'next/head'
-import styles from '../styles/FreeWeek.module.css'
 
 // Riot API request functions
 import { 
@@ -10,7 +8,7 @@ import {
 } from '../requests/apiRequests.js'
 
 // Page components
-import FwChampion from '../components/pages/free-week/components.js'
+import ListedChampion from '../components/ListedChampion'
 
 var version, champions, freeWeek
 async function preload() {
@@ -19,7 +17,7 @@ async function preload() {
     freeWeek = await getFreeWeek(champions)
 }
 
-// Free Week page
+// Free Week list page
 export default function FreeWeek({freeWeek, version}) {
     return (
         <div>
@@ -29,7 +27,7 @@ export default function FreeWeek({freeWeek, version}) {
             </Head>
             
             {freeWeek.map((champion, i) => {
-                return <FwChampion key={'fwchampion-' + champion} version={version} champion={champion} link={`/champions/${champion}`}/>
+                return <ListedChampion key={'fwchampion-' + champion} version={version} champion={champion} link={`/champions/${champion}`}/>
             })}
         </div>
 )

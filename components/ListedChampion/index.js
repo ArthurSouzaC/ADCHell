@@ -1,3 +1,5 @@
+import styles from './styles.module.css'
+
 export default function ListedChampion({version, champion, link}) {
     return (
         <a href={link}>

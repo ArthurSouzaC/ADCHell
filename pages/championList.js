@@ -1,9 +1,10 @@
-// Next.js
 import Head from 'next/head'
-import styles from '../styles/Champions.module.css'
+
+// CSS
+import styles from '../styles/championList.module.css'
 
 // Page components
-import ListedChampion from '../components/pages/championList/components.js'
+import ListedChampion from '../components/ListedChampion'
 
 // Riot API request functions
 import { 
@@ -17,7 +18,7 @@ async function preload() {
     champions = await getChampionsData(version)
 }
 
-// Champions page
+// Champion list page
 export default function ChampionList({version, champions}) {
     return (
         <div>
