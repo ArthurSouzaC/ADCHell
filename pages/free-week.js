@@ -1,5 +1,8 @@
 import Head from 'next/head'
 
+// CSS
+import css from '../styles/free-week.module.css'
+
 // Riot API request functions
 import { 
     getCurrentGameVersion,
@@ -20,16 +23,19 @@ async function preload() {
 // Free Week list page
 export default function FreeWeek({freeWeek, version}) {
     return (
-        <div>
-            <Head>
-                <title>ADCHell - League of Legends info</title>
-                <link rel="icon" href="/adchell-logo.ico" />
-            </Head>
-            
-            {freeWeek.map((champion, i) => {
-                return <ListedChampion key={'fwchampion-' + champion} version={version} champion={champion} link={`/champions/${champion}`}/>
-            })}
-        </div>
+        <>
+            <h1 className={css.title}>Free Week</h1>
+            <div className={css.container}>
+                
+                <Head>
+                    <title>ADCHell - League of Legends info</title>
+                    <link rel="icon" href="/adchell-logo.ico" />
+                </Head>
+                {freeWeek.map((champion, i) => {
+                    return <ListedChampion key={'fwchampion-' + champion} version={version} champion={champion} link={`/champions/${champion}`}/>
+                })}
+            </div>
+        </>
 )
 }
 

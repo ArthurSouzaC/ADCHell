@@ -1,5 +1,12 @@
 html,
 body {
+
+  --color-success-box: #379392;
+  --color-success-box-darker: #1C4A4A;
+  --color-primary-dark: #3F403F;
+  --color-primary-background: #FBF7F4;
+
+  overflow-x: hidden;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -13,4 +20,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+  background: var(--color-primary-background);
+  padding-top: 70px;
 }

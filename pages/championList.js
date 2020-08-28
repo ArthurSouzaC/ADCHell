@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 // CSS
-import styles from '../styles/championList.module.css'
+import css from '../styles/championList.module.css'
 
 // Page components
 import ListedChampion from '../components/ListedChampion'
@@ -21,18 +21,21 @@ async function preload() {
 // Champion list page
 export default function ChampionList({version, champions}) {
     return (
-        <div>
-            <Head>
-                <title>ADCHell - campeões</title>
-                <link rel="icon" href="/adchell-logo.ico" />
-            </Head>
+        <>
+            <h1 className={css.title}>Campeões</h1>
+            <div className={css.container}>
+                <Head>
+                    <title>ADCHell - campeões</title>
+                    <link rel="icon" href="/adchell-logo.ico" />
+                </Head>
 
-            {Object.entries(champions).map((champion, i) => {
-                return(
-                    <ListedChampion key={'champion-list-' + champion[0]} version={version} champion={champion[0]} link={`/champions/${champion[0]}`}/>
-                )
-            })}
-        </div>
+                {Object.entries(champions).map((champion, i) => {
+                    return(
+                        <ListedChampion key={'champion-list-' + champion[0]} version={version} champion={champion[0]} link={`/champions/${champion[0]}`}/>
+                    )
+                })}
+            </div>
+        </>
     )
 }
 

@@ -1,5 +1,8 @@
 import Head from 'next/head'
 
+// CSS
+import css from '../styles/summoner.module.css'
+
 // Riot API request functions
 import { 
     getCurrentGameVersion,
@@ -29,26 +32,26 @@ async function preload() {
 // Summoner info page
 export default function Summoner({summoner, version}) {
     return (
-        <>
-           <div>
+        <div className={css.container}>
+           <header className={css.profileHeader}>
                 <div>
                     <img src={`http://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${summoner.profile.profileIconId}.png`} />
                     <div>{summoner.profile.summonerLevel}</div>
                 </div>
 
-                <div>
+                <span>
                     {summoner.profile.name}
-                </div>
-            </div>
+                </span>
+            </header>
 
-            <div>
-                <div>
+            <div className={css.EloAndMasteries}>
+                <div className={css.eloContent}>
                     {summoner.rank.map((rank, i) => {
                         return <Elo key={'elo-' + rank.queueType}{...rank}/>
                     })}
                 </div>
 
-                <div>
+                <div className={css.topMasteriesContent}>
                     {summoner.masteries.map((mastery, i) => {
                         if(i < 3){
                             return <TopMastery key={'topmastery-' + mastery.championId} version={version} {...mastery}/>
@@ -63,7 +66,7 @@ export default function Summoner({summoner, version}) {
                 })}
             </div>
 
-        </>
+        </div>
     )
 }
 

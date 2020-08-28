@@ -1,0 +1,110 @@
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.profileHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profileHeader div {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center
+}
+
+.profileHeader div img {
+    z-index: 1;
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+}
+
+.profileHeader div div {
+    display: flex;
+    justify-content: flex-end;
+    z-index: 0;
+    width: 25%;
+    height: 1.5rem;
+    background: black;
+    color: white;
+    margin-top: -0.3rem;
+    border-radius: 10px;
+}
+
+.profileHeader span {
+    font-size: 2rem;
+}
+
+.EloAndMasteries {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "elo masteries";
+}
+
+.eloContent {
+    grid-area: elo;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-cente;
+}
+
+.topMasteriesContent {
+    grid-area: masteries;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: 100%;
+    }
+
+    .profileHeader {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .profileHeader span {
+        margin: 0;
+        padding: 0;
+        padding-top: 15px;
+    }
+
+    .EloAndMasteries {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "elo"
+            "masteries";
+    }
+    
+    .eloContent {
+        grid-area: elo;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .topMasteriesContent {
+        grid-area: masteries;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+}

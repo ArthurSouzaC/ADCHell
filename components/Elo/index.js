@@ -1,11 +1,11 @@
-import style from './styles.module.css'
+import css from './styles.module.css'
 
 export default function Elo({queueType, tier, tier_pt, rank}) {
     return (
-        <div>
-            {queueType}
+        <div className={css.card}>
+            <span>{queueType}</span>
             <img src={`ranked_emblems/Emblem_${tier}.png`} />
-            {tier_pt} {rank}
+            <span>{tier_pt}&nbsp;{rank}</span>
         </div>
     )
 }

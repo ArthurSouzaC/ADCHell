@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 // Home CSS
-import styles from '../styles/home.module.css'
+import css from '../styles/home.module.css'
 
 // Homepage
 export default function Home() {
@@ -10,24 +10,23 @@ export default function Home() {
 	const [region, setRegion] = React.useState('br1')
 
 	return (
-		<div>
+		<div className={css.container}>
 			<Head>
 				<title>ADCHell - League of Legends info</title>
 				<link rel="icon" href="/adchell-logo.ico" />
 			</Head>
 
-			<div>
-			<div>
-				<img src="brand/adchell-logo.svg" title="ADCHell" alt="Brand" />
+			<header className={css.header}>
+				
+					<img src="brand/adchell-logo.svg" title="ADCHell" alt="Brand" />
+				
 				<h1>ADCHell</h1>
-			</div>
+			</header>
 
-			<form action="/summoner" method="get">
+			<form action="/summoner" method="get" className={css.form}>
 
-				<label htmlFor="summonerName">Nome de Invocador</label>
-				<input name="summonerName" type="text" value={summonerName} onChange={e => setSummonerName(e.target.value)} required/>
+				<input name="summonerName" type="text" value={summonerName} onChange={e => setSummonerName(e.target.value)} placeholder="Nome de Invocador" required/>
 
-				<label htmlFor="region">Região</label>
 				<select name="region" value={region} onChange={e => setRegion(e.target.value)}>
 					<option value="br1">BR1</option>
 					<option value="eun1">EUN1</option>
@@ -44,7 +43,6 @@ export default function Home() {
 
 				<button type="submit">Buscar</button>
 			</form>
-			</div>
 		</div>
 	)
 }

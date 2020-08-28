@@ -1,0 +1,15 @@
+.footer {
+    text-align: justify;
+    font-size: 1rem;
+    padding: 1px;
+    background: var(--color-primary-background);
+    border-top: solid 1px var(--color-primary-dark);
+}
+
+@media (max-width: 700px) {
+    .footer {
+        text-align: justify;
+        font-size: 0.6rem;
+        padding: 1px;
+    }
+}

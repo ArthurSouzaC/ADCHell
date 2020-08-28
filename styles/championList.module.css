@@ -1,0 +1,20 @@
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.title {
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: 100%;
+    }
+}
